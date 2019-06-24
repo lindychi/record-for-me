@@ -2,10 +2,10 @@
   "name": "record-for-me",
   "version": "1.0.0",
   "description": "",
-  "main": "server.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
@@ -18,7 +18,6 @@
   },
   "homepage": "https://github.com/lindychi/record-for-me#readme",
   "dependencies": {
-    "cool-ascii-faces": "^1.3.4",
     "ejs": "^2.6.2",
     "express": "^4.17.1"
   }
