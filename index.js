@@ -27,9 +27,9 @@ app.use(session({
 // })
 mongoose.connect(process.env.MONGODB_URI)
 
-var transaction = require('./models/transaction')
+var Book = require('./models/book')
 
-var router = require('./router/main')(app, transaction);
+var router = require('./router/main')(app, Book);
 
 var server = app.listen(app.get('port'), function() {
     console.log("Express server has started on port " + app.get('port'))
