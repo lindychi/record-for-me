@@ -6,7 +6,12 @@ var fs = require('fs')
 var mongoose = require('mongoose')
 
 app.set('port', (process.env.PORT || 5000))
-app.use(express.static(__dirname + '/public'))
+
+if (process.env.NODE_ENV === "production") {
+    app.use(express.static(__dirname + "/client/build"))
+} else {
+    app.use(express.static(__dirname + '/public'))
+}
 app.set('views', __dirname + '/views')
 app.set('view engine', 'ejs')
 app.engine('html', require('ejs').renderFile)

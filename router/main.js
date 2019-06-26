@@ -1,11 +1,11 @@
 module.exports = function(app, Book)
 {
-    app.get('/', function(req, res) {
-        res.render('index', {
-            title: "RFM",
-            length: 5
-        })
-    });
+    // app.get('/', function(req, res) {
+    //     res.render('index', {
+    //         title: "RFM",
+    //         length: 5
+    //     })
+    // });
 
     // GET ALL Book
     app.get('/bookkeeping/books', function(req,res){
@@ -78,5 +78,13 @@ module.exports = function(app, Book)
 
             res.status(204).end()
         })
+    })
+
+    app.get('/api/greeting', (req, res) => {
+        res.send("Hello World!")
+    })
+
+    app.get('/', (req, res) => {
+        res.sendFile(path.join(__dirname, "client/build", "index.html"))
     })
 }
