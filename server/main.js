@@ -1,3 +1,5 @@
+import api from './routes'
+
 module.exports = function(app, Book)
 {
     // app.get('/', function(req, res) {
@@ -84,7 +86,10 @@ module.exports = function(app, Book)
         res.send("Hello World!")
     })
 
+    app.use('/api', api)
+
     app.get('/', (req, res) => {
         res.sendFile(path.join(__dirname, "client/build", "index.html"))
     })
+
 }
